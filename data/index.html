@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>展示</title>
+    <style>
+        .container .video {
+            display: flex;
+            justify-content: center;
+        }
+        .container .img {
+            width: 100vw;
+            display: flex;
+        }
+        .container .img .img_item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .img p img {
+            position: absolute;
+            width: 300px;
+            flex: 1;
+            top: 50px;
+            left: 0;
+            z-index: 99;
+            visibility: hidden;
+        }
+        .img p {
+            cursor: pointer;
+        }
+        .img p:hover {
+            color: coral;
+        }
+        .img p:hover > img {
+            animation: showImg 0.3s cubic-bezier(0.21, 0.85, 1, 1) 1 forwards;
+        }
+        @keyframes showImg {
+            0% {
+                visibility: hidden;
+                top: -20px;
+            }
+            100% {
+                visibility: visible;
+                top: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="img">
+            <div class="img_item">
+                <p>职位搜索筛选<img src="./asset/1.jpg" alt=""></p>     
+            </div>
+            <div class="img_item">
+                <p>离线职位匹配<img src="./asset/2.jpg" alt=""></p>        
+            </div>
+            <div class="img_item">
+                <p>职位数据分析<img src="./asset/3.jpg" alt=""></p>          
+            </div>
+            <div class="img_item">
+                <p>简历页面<img src="./asset/4.jpg" alt=""></p>               
+            </div>
+        </div>
+        <div class="video">
+            <video width="600" height="600" controls>
+                <source src="./asset/miniProgram.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+    </div>
+</body>
+</html>
